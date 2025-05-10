@@ -1,41 +1,68 @@
-# Constelations (Pygame + Pygbag)
+# Constelations_pygame
 
-Este proyecto es un juego interactivo de constelaciones hecho con Pygame y preparado para ser ejecutado en la web usando [pygbag](https://github.com/pygame-web/pygbag).
+Pygame game packaged for the web with Pygbag.
 
-## Requisitos
+## Description
 
-- Python 3.8+
-- [pygbag](https://github.com/pygame-web/pygbag)
-- pygame
+Constelations is a small Pygame demo that draws moving dots and connects those within a certain distance, with an interactive control panel to adjust speed, number of points, and connection distance. With Pygbag, it can run in modern browsers as a WebAssembly application.
 
-Puedes instalar las dependencias con:
+**Important Note**  
+The original idea for this animation is not mine. I do not claim it as my own nor am I the rightful owner of its intellectual property. It is an attempt to replicate an animation I saw while browsing the internet. I have been unable to locate the original animation again and therefore cannot credit the creator.
 
-```bash
-pip install -r requirements.txt
+## Requirements
+
+- **Python** ≥ 3.8 (tested with 3.11.0; 3.12.x unsuccessful)
+- **pygame-ce** (community edition of Pygame)
+- **pygbag** ≥ 0.8.1 (recommended 0.9.2)
+
+## Installation
+
+1. Clone or download this repository.
+2. Create and activate a virtual environment (optional but recommended):
+   ```bash
+   python -m venv venv
+   source venv/bin/activate   # Linux / macOS
+   venv\Scripts\activate      # Windows
+   ```
+3. Install the dependencies:
+   ```bash
+   pip install --upgrade pip
+   pip install -r requirements.txt
+   ```
+
+## Running Locally
+
+1. Package the current folder with Pygbag:
+   ```bash
+   python -m pygbag .
+   ```
+2. Open in your browser:
+   ```
+   http://localhost:8000
+   ```
+3. For debug mode (interactive REPL):
+   ```
+   http://localhost:8000?-i
+   ```
+
+## File Structure
+
+```
+Constelations/
+├── main.py           # Game source code (async)
+├── assets/           # Images, sounds, and fonts
+├── requirements.txt  # Python dependencies
+└── README.md         # This document
 ```
 
-## Ejecutar localmente
+## Customization
 
-```bash
-python main.py
-```
+- Adjust `main.py` if you add new assets or dependencies.
+- You can create a ZIP ready for itch.io with:
+  ```bash
+  python -m pygbag . --archive
+  ```
 
-## Construir para la web (pygbag)
+## License
 
-1. Asegúrate de que `main.py` esté en la raíz del proyecto.
-2. Ejecuta el siguiente comando en la terminal:
-
-```bash
-pygbag .
-```
-
-Esto iniciará un servidor en `http://localhost:8000` donde podrás probar el juego en el navegador.
-
-## Subir a tu web/portfolio
-
-- El contenido generado estará en la carpeta `build/web` después de correr `pygbag .`.
-- Sube el contenido de `build/web` a tu servidor web o portfolio.
-
----
-
-¡Listo para compartir tu juego en la web! 
+This project is licensed under the MIT License.
