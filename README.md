@@ -11,7 +11,7 @@ The original idea for this animation is not mine. I do not claim it as my own no
 
 ## Requirements
 
-- **Python** ≥ 3.8 (tested with 3.11.0; 3.12.x unsuccessful)
+- **Python** working on ≥ 3.8.x and < 3.12.x - [3.8.x, 3.12)
 - **pygame-ce** (community edition of Pygame)
 - **pygbag** ≥ 0.8.1 (recommended 0.9.2)
 
